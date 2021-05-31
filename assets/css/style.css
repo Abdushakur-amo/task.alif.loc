@@ -1,0 +1,58 @@
+.my_summa {
+    position: absolute;
+    background: #dc3545;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    right: -10px;
+    top: -10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swal-text {
+  text-align: center;
+}
+code {
+    color: #02d3ef;
+}
+.footer .footer-content {
+    justify-content: flex-end;
+}
+.alert-default {
+    border-color: #ffffff;
+    background: white;
+    box-shadow: 0 0 1px 0.1px #666;
+}
+
+.col-md-4 .card:hover {
+    box-shadow: 0 0 20px 0px #ddd;
+}
+
+.MyDokhodС, 
+.SendSummaC{
+    color: #212529 !important;
+    font-weight: bold;
+}
+.axia-status{
+    text-align: center; margin: 0;
+}
+
+.axia-status {
+    font-family: calibri, 'time new roman';
+    color: #000000;
+    font-size: 18px;
+    text-shadow: 0px 0px #000000fa;
+}
+.f-undo{
+    color: #dc3545;
+}
+
+.checkbox input[type=checkbox]:checked+label:before {
+    background: #02d3ef;
+    border-color: #0bd3ee;
+    color: #fff;
+}

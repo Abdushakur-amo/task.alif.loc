@@ -1,0 +1,21 @@
+<?php
+
+namespace application\core;
+
+use application\lib\Db;
+
+abstract class Model {
+
+	public $db;
+	
+	public function __construct() {
+		$this->db = new Db;
+	}
+
+	// SQL запрос
+	public function SelectorSQL($sql) {
+		$result  = $this->db->rowSQL($sql);
+		return $result;
+	} 
+
+}
