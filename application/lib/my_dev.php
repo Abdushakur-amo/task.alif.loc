@@ -27,7 +27,11 @@
 		echo '</pre>';
 	}
 
-
+	function ResultTov($id_tovar) {
+		$result = rowSQL('SELECT * FROM products WHERE `id` = '.$id_tovar);
+		if( empty($result) ) return false;
+		else return $result[0];
+	}
 
 
 	function format992($phone){
@@ -71,20 +75,37 @@
 			case '12':$mon = 'Декабрь';break;
 			default:$mon = 'Не найдено Функсияи: dataText()';break;
 		}
-		// Формати Росия на Тоҷикистон - Пока не используется
-		// $result['soat'] = $result['soat'] + 2;
-		if($datatime == true) return  $result['ruz'].'.'.$mon.'.'.$result['sol'].' / '.$result['soat'].':'.$result['daqiqa'];
+		//Формати Росия на Тоҷикистон - Пока не используется
+		$result['soat'] = $result['soat'] + 2;
+		if($datatime == true) return  $result['ruz'].'.'.$mon.'.'.$result['sol'].' / '.$result['soat'].':'.$result['daqiqa'].' <i class="anticon anticon-clock-circle"></i>';
 	    else  return  $result['ruz'].'.'.$mon.'.'.$result['sol'];
 	}
-	
-
-	
 
 
+	function mail_utf8($to, $from, $subject, $message){
+	    $subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+	    $headers  = "MIME-Version: 1.0\r\n"; 
+	    $headers .= "Content-type: text/plain; charset=utf-8\r\n";
+	    $headers .= "Мой почта: $from\r\n";
+	    return mail($to, $subject, $message, $headers);
+	}
 
-
-
-
+	function send_mail( $email, $title, $text ) {
+		mail($email, $title, '<!DOCTYPE html>
+		<html>
+			<head>
+				<meta charset="UTF-8">
+				<title>'.$title.'</title>
+			</head>
+			<body style="margin:0">
+				<div style="position: absolute; width: 100%;top: 0;margin:0; padding:0; font-size: 18px; font-family: Arial, sans-serif; font-weight: bold; text-align: center; background: #FCFCFD">
+					<div style="margin:0; background: rgb(57, 185, 128); padding: 25px; color:#fff">'.$title.'</div>
+					<div style="padding:30px;"><div style="background: #fff; border-radius: 10px; padding: 25px; border: 1px solid #EEEFF2">'.$text.'</div></div>
+						<p>Пожалуйста подождите мы обязательно вам ответим</p>
+				</div>
+		</body>
+		</html>', "From: alifTask@alif.tj\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8");
+	}
 
 
 

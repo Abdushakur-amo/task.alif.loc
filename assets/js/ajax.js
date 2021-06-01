@@ -10,7 +10,7 @@ function Ajax_YahYo(name, data, url=false){
             $('.body-load').addClass('body-load-none');
         },
         success: function(result){
-            //console.log(result);
+            console.log(result);
             // Loader 
         	$('.body-load').removeClass('body-load-none');
             json = jQuery.parseJSON(result);

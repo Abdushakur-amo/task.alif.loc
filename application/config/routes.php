@@ -6,4 +6,8 @@ return [
 		'controller' => 'main',
 		'action' => 'index',
 	],
+	'list' => [
+		'controller' => 'main',
+		'action' => 'list',
+	],
 ];

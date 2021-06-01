@@ -2,6 +2,8 @@
 	return [
 		'all' => [
 			'index',
+			'list'
+
 		],
 		'authorize' => [
 			//

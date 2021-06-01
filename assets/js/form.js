@@ -16,7 +16,7 @@ $(document).ready(function() {
 			success: function(result) {
 				// Loader 
 				$('.body-load').removeClass('body-load-none');
-				//console.log(result);
+				console.log(result);
 				json = jQuery.parseJSON(result);
 				// Message
 				if(json.message && json.locat_function=='default') {
